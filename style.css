@@ -1,40 +1,79 @@
-.box{
+/* ===== FUNDO ANIMADO ===== */
+body {
+    text-align: center;
+    animation: fundoAnimado 8s infinite alternate;
+}
 
+/* animação do fundo - sempre escrever keyframe dai põe o nome de animação */
+@keyframes fundoAnimado {
+    0% { background-color: rgb(31, 26, 182); }
+    50% { background-color: rgb(190, 83, 214); }
+    100% { background-color: rgb(23, 226, 233); }
+}
+
+/* ===== CAIXAS - aqui guardamos as 2 classes criadas de testes ===== */
+.box, .box1 {
     width: 500px;
     height: 200px;
     padding: 40px;
-    border: 20px solid rgb(23, 226, 233);
     margin: 20px auto;
-    background-color: rgb(190, 83, 214);
     text-align: center;
     font-weight: bold;
-
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
 }
 
-.box1{
-
-    width: 500px;
-    height: 200px;
-    padding: 40px;
-    border: 20px solid rgb(180, 241, 28);
-    margin: 20px auto;
-    background-color: rgb(31, 26, 182);
-    text-align: center;
-    font-weight: bold;
-
+/* cores diferentes */
+.box {
+    border: 20px solid rgb(86, 226, 100);
+    background-color: rgb(74, 179, 227);
 }
 
-.boogaloo-regular {
-  font-family: "Boogaloo", sans-serif;
-  font-weight: 400;
-  font-style: bold;
+.box1 {
+    border: 20px solid rgb(198, 68, 89);
+    background-color: rgb(174, 26, 182);
 }
 
-
-.boogaloo-segundo {
-  font-family: "Boogaloo", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* aumentar ao passar o mouse */
+.box:hover,
+.box1:hover {
+    transform: scale(1.1);
 }
 
+/* ===== DESCRIÇÃO ===== */
+.descricao {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 10px;
+    transition: bottom 0.4s ease;
+}
 
+/* mostrar descrição */
+.box:hover .descricao,
+.box1:hover .descricao {
+    bottom: 0;
+}
+
+/* ===== BOTÃO ===== */
+.botao {
+    padding: 15px 30px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: gray;
+}
+
+.botao:active {
+    transform: scale(0.8);
+}
